@@ -1,0 +1,4 @@
+FLASK_APP=strong_but_simple_passwords
+FLASK_ENV=development
+
+SBSP_SECRET_KEY=something-secret
