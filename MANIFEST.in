@@ -1,1 +1,2 @@
 graft strong_but_simple_passwords/templates
+graft strong_but_simple_passwords/static
