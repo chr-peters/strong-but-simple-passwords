@@ -14,7 +14,7 @@ def test_custom_config():
 
 
 def test_config_from_env_vars():
-    os.environ["SBSP_SECRET_KEY"] = "secret-key-from-env-var"
+    os.environ["SECRET_KEY"] = "secret-key-from-env-var"
 
     app = create_app()
 
