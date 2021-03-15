@@ -17,15 +17,21 @@
     <h1>
         How to create a secure and easy to remember password following some simple rules:
     </h1>
-    <p>
-        1. Start with a sentence you can remember
-    </p>
-    <p>
-        2. Only keep the first 3 letters of each word
-    </p>
-    <p>
-        3. Put a random symbol somewhere in between
-    </p>
+    <form action="/" method="POST">
+        <ol>
+            <li>
+                <label for="input_sentence">Start with a sentence you can remember</label><br>
+                <input type="text" id="input_sentence" name="input_sentence">
+            </li>
+            <li>
+                Only keep the first 3 letters of each word
+            </li>
+            <li>
+                Put a random symbol somewhere in between
+            </li>
+        </ol>
+        <button type="submit">Generate password!</button>
+    </form>
 </body>
 
 </html>

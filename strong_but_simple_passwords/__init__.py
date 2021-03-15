@@ -11,6 +11,6 @@ def create_app(config=None):
 
     app.config.from_object(config)
 
-    app.add_url_rule("/", "index", view_func=views.index)
+    app.add_url_rule("/", "index", view_func=views.index, methods=("GET", "POST"))
 
     return app
