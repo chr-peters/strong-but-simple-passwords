@@ -10,30 +10,41 @@
         After throwing in a symbol in between two random words, you have successfully created a secure password.
     ">
 
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='normalize.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
 
     <title>How to generate a strong but simple password</title>
 </head>
 
 <body>
-    <h1>
-        How to create a secure and easy to remember password following some simple rules:
-    </h1>
-    <form action="/" method="POST">
-        <ol>
-            <li>
-                <label for="input_sentence">Start with a sentence you can remember</label><br>
-                <input type="text" id="input_sentence" name="input_sentence">
-            </li>
-            <li>
-                Only keep the first 3 letters of each word
-            </li>
-            <li>
-                Put a random symbol somewhere in between
-            </li>
-        </ol>
-        <button type="submit">Generate password!</button>
-    </form>
+    <header>
+        <a id="github" href="https://github.com/cxan96/strong-but-simple-passwords">
+            <img src="{{ url_for('static', filename='img/GitHub-Mark-64px.png') }}">
+        </a>
+    </header>
+    <main>
+        <h1>
+            How to create a secure and easy to remember password following some simple rules:
+        </h1>
+        <form action="{{ url_for('index') }}" method="POST">
+            <ol>
+                <li>
+                    <label for="input_sentence">1. Start with a sentence you can remember</label><br>
+                    <input type="text" id="input_sentence" name="input_sentence">
+                </li>
+                <li>
+                    2. Only keep the first 3 letters of each word
+                </li>
+                <li>
+                    3. Put a random symbol somewhere in between
+                </li>
+            </ol>
+            <button type="submit">Generate password!</button>
+        </form>
+    </main>
 </body>
 
 </html>
