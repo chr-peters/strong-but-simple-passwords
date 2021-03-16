@@ -32,14 +32,16 @@
         <form action="{{ url_for('index') }}" method="POST">
             <ol>
                 <li>
-                    <label for="input_sentence">1. Start with a sentence you can remember</label><br>
+                    <label for="input_sentence">
+                        <h3>1. Start with a sentence you can remember</h3>
+                    </label>
                     <input type="text" id="input_sentence" name="input_sentence">
                 </li>
                 <li>
-                    2. Only keep the first 3 letters of each word
+                    <h3>2. Only keep the first 3 letters of each word</h3>
                 </li>
                 <li>
-                    3. Put a random symbol somewhere in between
+                    <h3>3. Put a random symbol somewhere in between</h3>
                 </li>
             </ol>
             <button type="submit">Generate password!</button>

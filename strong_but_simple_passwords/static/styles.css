@@ -7,17 +7,58 @@ header {
     padding: 10px
 }
 
-#github{
-    /* float: right; */
-    /* margin-right: 0; */
-}
-
 main {
     max-width: 850px;
     margin: 0 auto;
+    box-shadow: 0 2px 8px rgba(0,0,0,.15);
+    padding: 1.5rem;
+    border-radius: 20px;
+}
+
+h1 {
+    font-size: 3rem;
+    margin-bottom: 1em;
 }
 
 ol {
     padding: 0;
     list-style: none;
+}
+
+h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5em;
+}
+
+input[type="text"] {
+    display: block;
+    font-size: 1.5rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,.15);
+    width: 80%;
+    height: 1.5em;
+    border: 0;
+    border-radius: 5px;
+    margin: 0.5em auto;
+    padding: 0.5em;
+    text-align: center;
+    outline: none;
+}
+
+button {
+    display: block;
+    margin-top: 1em;
+    margin-left: auto;
+    margin-right: auto;
+	background: #d22d27;
+	color: #fff;
+    font-size: 1.5rem;
+    font-weight: bold;
+    border: 0;
+    border-radius: 25px;
+    padding: 0.4em 1.5em;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #af0809;
 }
