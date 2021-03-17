@@ -1,0 +1,15 @@
+tests/
+.flake8
+.flaskenv 
+LICENSE 
+README.md 
+tox.ini
+
+venv/
+htmlcov/
+.coverage
+__pycache__/
+*.egg-info
+.tox/
+*.br
+*.gz
