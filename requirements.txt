@@ -4,6 +4,8 @@
 #
 #    pip-compile
 #
+brotli==1.0.9
+    # via strong-but-simple-passwords (setup.py)
 click==7.1.2
     # via flask
 flask==1.1.2

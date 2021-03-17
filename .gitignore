@@ -4,3 +4,5 @@ htmlcov/
 __pycache__/
 *.egg-info
 .tox/
+*.br
+*.gz
