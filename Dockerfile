@@ -12,4 +12,4 @@ RUN pip install -r requirements.txt
 # compress static files
 RUN python -m whitenoise.compress ./strong_but_simple_passwords/static/
 
-CMD gunicorn "strong_but_simple_passwords:create_app()" --bind 0.0.0.0:$PORT --log-file -
+CMD gunicorn "strong_but_simple_passwords:create_app()" --bind 0.0.0.0:$PORT --log-file - --access-logfile -
