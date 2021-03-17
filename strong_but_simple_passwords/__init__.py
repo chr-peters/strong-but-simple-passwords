@@ -6,7 +6,8 @@ from . import views
 
 
 def create_app(config=None):
-    app = Flask(__name__)
+    # don't use a static_folder since we will use whitenoise to serve the static files
+    app = Flask(__name__, static_folder=None)
 
     if config is None:
         config = get_config_from_env_vars()
