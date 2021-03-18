@@ -1,6 +1,5 @@
 from flask import Flask
 from flask_talisman import Talisman
-from flask_seasurf import SeaSurf
 from whitenoise import WhiteNoise
 from pathlib import Path
 from .config import get_config_from_env_vars
@@ -18,15 +17,16 @@ def create_app(config=None):
 
     app.add_url_rule("/", "index", view_func=views.index, methods=("GET", "POST"))
 
-    # add CSRF protection
-    SeaSurf(app)
-
     # use whitenoise to serve static files
     static_root = Path(__file__).parent / "static/"
     app.wsgi_app = WhiteNoise(app.wsgi_app, root=static_root, prefix="static/")
 
     # disable force_https during testing
     force_https = not app.config["TESTING"]
-    Talisman(app, force_https=force_https)
+
+    # allow to load fonts from google
+    csp = {"default-src": ["'self'", "*.googleapis.com", "*.gstatic.com"]}
+
+    Talisman(app, force_https=force_https, content_security_policy=csp)
 
     return app

@@ -8,7 +8,6 @@ setup(
     install_requires=[
         "flask",
         "flask-talisman",
-        "flask-seasurf",
         "whitenoise",
         "brotli",
         "gunicorn",

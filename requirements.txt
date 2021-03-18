@@ -8,14 +8,10 @@ brotli==1.0.9
     # via strong-but-simple-passwords (setup.py)
 click==7.1.2
     # via flask
-flask-seasurf==0.3.0
-    # via strong-but-simple-passwords (setup.py)
 flask-talisman==0.7.0
     # via strong-but-simple-passwords (setup.py)
 flask==1.1.2
-    # via
-    #   flask-seasurf
-    #   strong-but-simple-passwords (setup.py)
+    # via strong-but-simple-passwords (setup.py)
 gunicorn==20.0.4
     # via strong-but-simple-passwords (setup.py)
 itsdangerous==1.1.0
