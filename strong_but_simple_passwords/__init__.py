@@ -1,5 +1,6 @@
 from flask import Flask
 from flask_talisman import Talisman
+from flask_seasurf import SeaSurf
 from whitenoise import WhiteNoise
 from pathlib import Path
 from .config import get_config_from_env_vars
@@ -16,6 +17,9 @@ def create_app(config=None):
     app.config.from_object(config)
 
     app.add_url_rule("/", "index", view_func=views.index, methods=("GET", "POST"))
+
+    # add CSRF protection
+    SeaSurf(app)
 
     # use whitenoise to serve static files
     static_root = Path(__file__).parent / "static/"
