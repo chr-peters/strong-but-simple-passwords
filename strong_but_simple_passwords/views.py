@@ -1,5 +1,5 @@
 from flask import render_template, request
-from .core import get_random_sentence
+from .core import get_random_sentence, generate_password_from_sentence
 
 
 def index():
@@ -12,5 +12,10 @@ def index():
         random_sentence = get_random_sentence()
         return render_template("index.html", sentence=random_sentence)
 
+    # read user sentence and generate password
     user_sentence = request.form["input_sentence"]
-    return render_template("index.html", sentence=user_sentence)
+    generated_password = generate_password_from_sentence(user_sentence)
+
+    return render_template(
+        "index.html", sentence=user_sentence, generated_password=generated_password
+    )

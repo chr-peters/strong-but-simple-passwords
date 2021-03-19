@@ -46,6 +46,10 @@
             </ol>
             <button type="submit">Generate password!</button>
         </form>
+        {% if generated_password is defined %}
+        Congratulations! 🎉🎉🎉 You successfully generated a secure password:
+        {{ generated_password }}
+        {% endif %}
     </main>
 </body>
 
