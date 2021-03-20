@@ -3,10 +3,11 @@ from zxcvbn import zxcvbn
 
 
 sentences = [
-    "My favourite food is ice cream",
+    "My favourite food is lemon ice cream",
     "I love taking long walks at the beach",
     "Watching my favourite movie while eating good food is fun",
     "I love the taste of a pice of chocolate cake",
+    "I really enjoy drinking lemonade while watching the sunset",
 ]
 
 symbols = "!?@#$%^&*"
@@ -67,7 +68,7 @@ def generate_password_from_sentence(sentence, letters_per_word=1):
 def get_cracking_time_as_string(password):
     """
     Returns the time an attacker needs to crack the password if
-    the attacker can try 1e4 hashes per second.
+    the attacker can try 1e10 hashes per second.
     """
     result = zxcvbn(password)
-    return result["crack_times_display"]["offline_slow_hashing_1e4_per_second"]
+    return result["crack_times_display"]["offline_fast_hashing_1e10_per_second"]

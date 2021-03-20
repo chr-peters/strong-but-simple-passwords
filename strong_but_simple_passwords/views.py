@@ -22,7 +22,7 @@ def index():
         user_sentence, letters_per_word=3
     )
 
-    # get the time it would take an offline attacker (1e4 hashes per second)
+    # get the time it would take a powerful offline attacker (1e10 hashes per second)
     # to crack this password
     cracking_time = get_cracking_time_as_string(generated_password)
 

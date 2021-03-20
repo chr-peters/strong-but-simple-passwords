@@ -127,4 +127,4 @@ def test_get_cracking_time_as_string():
     This example is taken from the zxcvbn documentation.
     """
     password = "JohnSmith123"
-    assert get_cracking_time_as_string(password) == "4 minutes"
+    assert get_cracking_time_as_string(password) == "less than a second"
