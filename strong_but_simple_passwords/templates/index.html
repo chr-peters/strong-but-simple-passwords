@@ -49,6 +49,8 @@
         {% if generated_password is defined %}
         Congratulations! 🎉🎉🎉 You successfully generated a secure password:
         {{ generated_password }}
+        If a hacker tried 10,000 paswords every second, this is how long it would take him to find yours: {{
+        cracking_time }}
         {% endif %}
     </main>
 </body>

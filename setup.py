@@ -11,5 +11,6 @@ setup(
         "whitenoise",
         "brotli",
         "gunicorn",
+        "zxcvbn",
     ],
 )

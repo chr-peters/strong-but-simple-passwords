@@ -8,6 +8,7 @@ from strong_but_simple_passwords.core import (
     get_first_letters_from_each_word,
     put_symbol_between_words,
     generate_password_from_sentence,
+    get_cracking_time_as_string,
 )
 from strong_but_simple_passwords import core
 import random
@@ -119,3 +120,11 @@ def test_generate_password_from_sentence(monkeypatch):
         generate_password_from_sentence(sentence, letters_per_word=3)
         == "Ilikcut!dogandcat"
     )
+
+
+def test_get_cracking_time_as_string():
+    """
+    This example is taken from the zxcvbn documentation.
+    """
+    password = "JohnSmith123"
+    assert get_cracking_time_as_string(password) == "4 minutes"

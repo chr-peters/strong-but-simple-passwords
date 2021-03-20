@@ -26,6 +26,8 @@ werkzeug==1.0.1
     # via flask
 whitenoise==5.2.0
     # via strong-but-simple-passwords (setup.py)
+zxcvbn==4.4.28
+    # via strong-but-simple-passwords (setup.py)
 
 # The following packages are considered to be unsafe in a requirements file:
 # setuptools

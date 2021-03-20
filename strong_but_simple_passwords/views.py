@@ -1,5 +1,9 @@
 from flask import render_template, request
-from .core import get_random_sentence, generate_password_from_sentence
+from .core import (
+    get_random_sentence,
+    generate_password_from_sentence,
+    get_cracking_time_as_string,
+)
 
 
 def index():
@@ -14,8 +18,17 @@ def index():
 
     # read user sentence and generate password
     user_sentence = request.form["input_sentence"]
-    generated_password = generate_password_from_sentence(user_sentence)
+    generated_password = generate_password_from_sentence(
+        user_sentence, letters_per_word=3
+    )
+
+    # get the time it would take an offline attacker (1e4 hashes per second)
+    # to crack this password
+    cracking_time = get_cracking_time_as_string(generated_password)
 
     return render_template(
-        "index.html", sentence=user_sentence, generated_password=generated_password
+        "index.html",
+        sentence=user_sentence,
+        generated_password=generated_password,
+        cracking_time=cracking_time,
     )
