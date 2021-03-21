@@ -3,16 +3,22 @@ html {
 }
 
 header {
-    text-align: right;
-    padding: 10px
+    display: flex;
+    justify-content: flex-end;
+    padding: 5px;
 }
 
 main {
     max-width: 850px;
-    margin: 0 auto;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 1em;
+    margin-bottom: 1em;
     box-shadow: 0 2px 8px rgba(0,0,0,.15);
     padding: 1.5rem;
     border-radius: 20px;
+    font-size: 1.5rem;
+    line-height: 1.5;
 }
 
 h1 {
@@ -20,19 +26,17 @@ h1 {
     margin-bottom: 1em;
 }
 
-ol {
-    padding: 0;
-    list-style: none;
+h3 {
+    font-size: 1.8rem;
+    margin-bottom: 0.5em;
 }
 
-h3 {
-    font-size: 1.5rem;
-    margin-bottom: 0.5em;
+p {
+    margin-top: 1.5em;
 }
 
 input[type="text"] {
     display: block;
-    font-size: 1.5rem;
     box-shadow: 0 2px 8px rgba(0,0,0,.15);
     width: 80%;
     height: 1.5em;
