@@ -65,10 +65,21 @@ def generate_password_from_sentence(sentence, letters_per_word=1):
     return "".join(words_with_symbol)
 
 
-def get_cracking_time_as_string(password):
+class PasswordStrengthResult:
     """
-    Returns the time an attacker needs to crack the password if
-    the attacker can try 1e10 hashes per second.
+    A wrapper around the response object returned by zxcvbn.
     """
+
+    def __init__(self, zxcvbn_response):
+        self._data = zxcvbn_response
+
+    def get_fast_cracking_time_string(self):
+        return self._data["crack_times_display"]["offline_fast_hashing_1e10_per_second"]
+
+    def get_fast_cracking_time_seconds(self):
+        return self._data["crack_times_seconds"]["offline_fast_hashing_1e10_per_second"]
+
+
+def estimate_password_strength(password):
     result = zxcvbn(password)
-    return result["crack_times_display"]["offline_fast_hashing_1e10_per_second"]
+    return PasswordStrengthResult(result)

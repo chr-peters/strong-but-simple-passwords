@@ -2,7 +2,7 @@ from flask import render_template, request
 from .core import (
     get_random_sentence,
     generate_password_from_sentence,
-    get_cracking_time_as_string,
+    estimate_password_strength,
 )
 
 
@@ -22,9 +22,11 @@ def index():
         user_sentence, letters_per_word=3
     )
 
+    response = estimate_password_strength(generated_password)
+
     # get the time it would take a powerful offline attacker (1e10 hashes per second)
     # to crack this password
-    cracking_time = get_cracking_time_as_string(generated_password)
+    cracking_time = response.get_fast_cracking_time_string()
 
     return render_template(
         "index.html",

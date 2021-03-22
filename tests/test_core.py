@@ -8,10 +8,11 @@ from strong_but_simple_passwords.core import (
     get_first_letters_from_each_word,
     put_symbol_between_words,
     generate_password_from_sentence,
-    get_cracking_time_as_string,
+    estimate_password_strength,
 )
 from strong_but_simple_passwords import core
 import random
+from decimal import Decimal
 
 
 def test_get_random_sentence():
@@ -122,9 +123,12 @@ def test_generate_password_from_sentence(monkeypatch):
     )
 
 
-def test_get_cracking_time_as_string():
+def test_estimate_password_strength():
     """
     This example is taken from the zxcvbn documentation.
     """
     password = "JohnSmith123"
-    assert get_cracking_time_as_string(password) == "less than a second"
+    response = estimate_password_strength(password)
+
+    assert response.get_fast_cracking_time_string() == "less than a second"
+    assert response.get_fast_cracking_time_seconds() == Decimal("0.00025678")
