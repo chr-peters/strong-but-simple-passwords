@@ -43,15 +43,56 @@
         <button form="sentence_form" type="submit">Generate password!</button>
 
         {% if generated_password is defined %}
+
+        {% if password_strength_response.get_slow_cracking_time_seconds() is le (60 * 60 * 24 * 2) %}
+
+        <p>
+            <strong>You are on the right track,</strong>
+            but you might want to consider adding more words to your sentence.
+            A hacker who can try <strong>10,000</strong> passwords per second (which really isn't alot)
+            can find yours in
+            <strong>{{ password_strength_response.get_slow_cracking_time_string() }}</strong>.
+        </p>
+        <p>
+            Anyways, here is the password you generated:
+            <input type="text" value="{{ generated_password }}">
+        </p>
+
+        {% else %}
+
         <p>
             <strong>Congratulations! 🎉🎉🎉</strong><br>
             You successfully generated a secure password:
             <input type="text" value="{{ generated_password }}">
         </p>
         <p>
-            If a hacker tried <strong>10,000,000,000 </strong> different passwords every second,
-            this is how long it would take them to find yours: <strong>{{ cracking_time }}</strong>
+            If a hacker tried <strong>10,000</strong> different passwords every second,
+            this is how long it would take them to find yours:
+            <strong>{{ password_strength_response.get_slow_cracking_time_string() }}</strong>
         </p>
+        <p>
+            {% if password_strength_response.get_fast_cracking_time_seconds() is le (60 * 60 * 24 * 2) %}
+
+            <strong>But be careful!</strong> There are password crackers out there with alot of
+            computing power.
+            If they can try <strong>10,000,000,000</strong> passwords per second, they can still find
+            your password in
+            <strong>{{ password_strength_response.get_fast_cracking_time_string() }}</strong>.
+            <br>
+            So maybe consider adding more words to your sentence!
+
+            {% else %}
+
+            Even if they had a big GPU cluster running <strong>10,000,000,000</strong> passwords
+            per second, they would still need
+            <strong>{{ password_strength_response.get_fast_cracking_time_string() }}</strong>
+            to crack your password.
+
+            {% endif %}
+        </p>
+
+        {% endif %}
+
         {% endif %}
     </main>
 </body>

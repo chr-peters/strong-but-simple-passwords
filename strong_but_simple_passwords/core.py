@@ -79,6 +79,12 @@ class PasswordStrengthResult:
     def get_fast_cracking_time_seconds(self):
         return self._data["crack_times_seconds"]["offline_fast_hashing_1e10_per_second"]
 
+    def get_slow_cracking_time_string(self):
+        return self._data["crack_times_display"]["offline_slow_hashing_1e4_per_second"]
+
+    def get_slow_cracking_time_seconds(self):
+        return self._data["crack_times_seconds"]["offline_slow_hashing_1e4_per_second"]
+
 
 def estimate_password_strength(password):
     result = zxcvbn(password)

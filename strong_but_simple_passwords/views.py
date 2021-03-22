@@ -22,15 +22,11 @@ def index():
         user_sentence, letters_per_word=3
     )
 
-    response = estimate_password_strength(generated_password)
-
-    # get the time it would take a powerful offline attacker (1e10 hashes per second)
-    # to crack this password
-    cracking_time = response.get_fast_cracking_time_string()
+    password_strength_response = estimate_password_strength(generated_password)
 
     return render_template(
         "index.html",
         sentence=user_sentence,
         generated_password=generated_password,
-        cracking_time=cracking_time,
+        password_strength_response=password_strength_response,
     )

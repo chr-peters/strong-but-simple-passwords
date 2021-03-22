@@ -132,3 +132,5 @@ def test_estimate_password_strength():
 
     assert response.get_fast_cracking_time_string() == "less than a second"
     assert response.get_fast_cracking_time_seconds() == Decimal("0.00025678")
+    assert response.get_slow_cracking_time_string() == "4 minutes"
+    assert response.get_slow_cracking_time_seconds() == Decimal("256.78")
