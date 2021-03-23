@@ -1,4 +1,5 @@
 import pytest
+
 from strong_but_simple_passwords import create_app
 
 

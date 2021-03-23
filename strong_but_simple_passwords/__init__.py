@@ -1,9 +1,11 @@
+from pathlib import Path
+
 from flask import Flask
 from flask_talisman import Talisman
 from whitenoise import WhiteNoise
-from pathlib import Path
-from .config import get_config_from_env_vars
+
 from . import views
+from .config import get_config_from_env_vars
 
 
 def create_app(config=None):

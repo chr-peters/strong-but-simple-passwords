@@ -1,18 +1,20 @@
-import pytest
-from strong_but_simple_passwords.core import (
-    get_random_sentence,
-    get_random_symbol,
-    sentences,
-    symbols,
-    get_first_letters_from_word,
-    get_first_letters_from_each_word,
-    put_symbol_between_words,
-    generate_password_from_sentence,
-    estimate_password_strength,
-)
-from strong_but_simple_passwords import core
 import random
 from decimal import Decimal
+
+import pytest
+
+from strong_but_simple_passwords import core
+from strong_but_simple_passwords.core import (
+    estimate_password_strength,
+    generate_password_from_sentence,
+    get_first_letters_from_each_word,
+    get_first_letters_from_word,
+    get_random_sentence,
+    get_random_symbol,
+    put_symbol_between_words,
+    sentences,
+    symbols,
+)
 
 
 def test_get_random_sentence():

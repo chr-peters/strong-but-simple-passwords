@@ -1,6 +1,6 @@
 import random
-from zxcvbn import zxcvbn
 
+from zxcvbn import zxcvbn
 
 sentences = [
     "My favourite food is lemon ice cream",

@@ -1,8 +1,9 @@
 from flask import render_template, request
+
 from .core import (
-    get_random_sentence,
-    generate_password_from_sentence,
     estimate_password_strength,
+    generate_password_from_sentence,
+    get_random_sentence,
 )
 
 

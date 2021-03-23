@@ -1,5 +1,6 @@
-from strong_but_simple_passwords import create_app
 import os
+
+from strong_but_simple_passwords import create_app
 
 
 def test_custom_config():
