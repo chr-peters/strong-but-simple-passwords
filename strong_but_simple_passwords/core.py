@@ -7,7 +7,8 @@ sentences = [
     "I love taking long walks at the beach",
     "Watching my favourite movie while eating good food is fun",
     "I love the taste of a pice of chocolate cake",
-    "I really enjoy drinking lemonade while watching the sunset",
+    "I enjoy drinking lemonade while watching the sunset",
+    "I love taking my dog for a walk",
 ]
 
 symbols = "!?@#$%^&*"
