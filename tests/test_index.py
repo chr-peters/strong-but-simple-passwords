@@ -1,4 +1,4 @@
-from strong_but_simple_passwords.core import sentences
+from strong_but_simple_passwords import views
 
 
 def test_index_http_ok(client):
@@ -6,13 +6,14 @@ def test_index_http_ok(client):
     assert response.status_code == 200
 
 
-def test_empty_post(client):
+def test_empty_post(monkeypatch, client):
+    a_random_sentence = "A random sentence."
+    monkeypatch.setattr(views, "get_random_sentence", lambda: a_random_sentence)
+
     response = client.post("/")
 
-    is_sentence_in = [cur_sentence in str(response.data) for cur_sentence in sentences]
-
     assert response.status_code == 200
-    assert any(is_sentence_in)
+    assert a_random_sentence in str(response.data)
 
 
 def test_strong_password(client):
