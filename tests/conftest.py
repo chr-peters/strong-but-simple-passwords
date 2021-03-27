@@ -9,10 +9,6 @@ class TestConfig:
 
 
 @pytest.fixture
-def app():
-    return create_app(TestConfig)
-
-
-@pytest.fixture
-def client(app):
+def client():
+    app = create_app(TestConfig)
     return app.test_client()

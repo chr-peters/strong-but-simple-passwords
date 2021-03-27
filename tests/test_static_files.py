@@ -1,4 +1,4 @@
-def test_css_http_ok(app, client):
+def test_css_http_ok(client):
     response = client.get("/static/css/styles.css")
     assert response.status_code == 200
 
@@ -6,6 +6,6 @@ def test_css_http_ok(app, client):
     assert response.status_code == 200
 
 
-def test_img_http_ok(app, client):
+def test_img_http_ok(client):
     response = client.get("/static/img/GitHub-Mark-64px.png")
     assert response.status_code == 200
