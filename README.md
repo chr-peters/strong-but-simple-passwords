@@ -23,7 +23,7 @@ First, build the image:
 docker build --tag strong-but-simple-passwords .
 ```
 
-The run it:
+Then run it:
 ```Shell Session
 docker run --publish 5000:5000 --env SECRET_KEY=something-secret --env FLASK_ENV=development strong-but-simple-passwords
 ```
