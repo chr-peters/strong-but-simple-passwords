@@ -6,7 +6,7 @@
 
 **Coming up with a good master password is hard, remembering it is even harder.**
 
-This is a simple Web-App that demonstrates a method of creating strong passwords. 
+This is a simple Web-App that demonstrates a method of creating strong passwords that are still easy to remember. 
 It also provides time estimates how long it would take an attacker to crack a password 
 using the [zxcvbn](https://github.com/dropbox/zxcvbn) library developed by Dropbox.
 
