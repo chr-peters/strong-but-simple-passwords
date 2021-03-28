@@ -14,3 +14,18 @@ The app is build using a simple Flask backend and can be deployed using docker.
 Right now it is running on Heroku free tier.
 
 [![screenshot](https://raw.githubusercontent.com/cxan96/strong-but-simple-passwords/main/screenshot.png)](https://strong-but-simple-passwords.herokuapp.com)
+
+
+## Running locally with Docker
+
+First, build the image:
+```Shell Session
+docker build --tag strong-but-simple-passwords .
+```
+
+The run it:
+```Shell Session
+docker run --publish 5000:5000 --env SECRET_KEY=something-secret --env FLASK_ENV=development strong-but-simple-passwords
+```
+
+Now open `localhost:5000` in a web-browser and you will see the app.
